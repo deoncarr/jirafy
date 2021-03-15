@@ -1,7 +1,9 @@
 {
-  "name": "JIRAfy",
-  "version": "0.0.2",
-  "description": "Scans the web and linkifies JIRA issues",
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "JIRAfy BCM",
+  "version": "0.0.1",
+  "description": "Scans the web and linkifies JIRA, CSP, KB, * issues",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
@@ -10,7 +12,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["*://mail.google.com/*", "*://broadcomcsm.service-now.com/*", "*://confluence.broadcom.net/*", "*://ingjira.broadcom.net/*"],
       "run_at": "document_idle",
       "all_frames": false,
       "js": ["js/jquery.min.js", "js/contentScript.js"]
